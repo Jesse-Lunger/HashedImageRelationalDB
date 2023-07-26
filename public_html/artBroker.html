@@ -1,0 +1,137 @@
+
+
+<html>
+<head>
+       <title>Art Broker</title>
+</head>
+
+<body bgcolor="white">
+<style>
+  form {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px; /* Adjust the maximum width as needed */
+    margin-right: auto;
+  }
+
+  label {
+    width: 120px; /* Adjust the width as needed */
+    margin-right: 10px; /* Adjust the margin as needed */
+  }
+
+  input[type="text"] {
+    flex: 1;
+  }
+
+  input[type="submit"],
+  input[type="reset"] {
+    margin-top: 5px; /* Adjust the margin as needed */
+  }
+
+</style>
+
+<h3>Connecting to ArtBroker database using MySQL/PHP</h3>
+<hr>
+
+<p>
+website that uses differen't encryption techniques to buy and sell art
+<p>
+
+
+
+
+<!-- Menu for adding clients-->
+
+<h1> Create Account</h1>
+<form action="operations.php" method="POST">
+  <label for="fname">First Name:</label>
+  <input type="text" name="item1[fname]" id="fname"><br>
+  <label for="lname">Last Name:</label>
+  <input type="text" name="item1[lname]" id="lname"><br>
+  <label for="uname">User Name:</label>
+  <input type="text" name="item1[uname]" id="uname"><br>
+  <label for="pkey">Public Key:</label>
+  <input type="text" name="item1[pkey]" id="pkey"><br>
+  <label for="pass">Password:</label>
+  <input type="text" name="item1[pass]" id="pass"><br>
+  <input type="submit" value="Submit">
+  <input type="reset" value="Reset">
+</form>
+
+<!-- Menu for removing clients-->
+<h1>Remove Client</h1>
+<form action="operations.php" method="POST">
+  <script src="script.js"></script>
+  <label for="clients">Select Client:</label>
+  <select id="clients" name="item2"></select>
+  <input type="submit" value="Submit">
+</form>
+
+
+
+<!-- Menu for adding art-->
+<h1>Add art</h1>
+<form action="operations.php" method="POST">
+
+  <label for="hashArtID">Hash value:</label>
+  <input type="text" name="item3[hashArtID]" id="hashArtID"><br>
+
+  <label for="clientID">Client ID:</label>
+  <input type="text" name="item3[clientID]" id="clientID"><br>
+
+  <label for="artName">Name of Art:</label>
+  <input type="text" name="item3[artName]" id="artName"><br>
+
+  <label for="wmKey">key:</label>
+  <input type="text" name="item3[wmKey]" id="wmKey"><br>
+
+  <label for="restoreKey">restore key:</label>
+  <input type="text" name="item3[restoreKey]" id="restoreKey"><br>
+  
+  <input type="submit" value="Submit">
+  <input type="reset" value="Reset">
+</form>
+
+
+<!-- Menu for removing clients-->
+<h1>Change ownership of art</h1>
+<form action="operations.php" method="POST">
+
+  <label for="hashArtID">Hash value:</label>
+  <input type="text" name="item4[hashArtID]" id="hashArtID"><br>
+
+  <label for="clientID">Client ID:</label>
+  <input type="text" name="item4[clientID]" id="clientID"><br>
+
+  <input type="submit" value="Submit">
+  <input type="reset" value="Reset">
+</form>
+
+
+<h1>Show art made by client</h1>
+<form action="operations.php" method="POST">
+
+  <label for="clientID">Client ID:</label>
+  <input type="text" name="item5[clientID]" id="clientID"><br>
+
+  <input type="submit" value="Submit">
+  <input type="reset" value="Reset">
+</form>
+
+
+<p>
+<a href="artBroker.txt" >Contents</a>
+of this page.
+
+<p>
+<a href="operations.txt" >Contents</a>
+of the PHP page that gets called.
+(And the <a href="connectionData.txt" >connection data</a>,
+kept separately for security reasons.)
+
+
+
+
+</body>
+</html>
+

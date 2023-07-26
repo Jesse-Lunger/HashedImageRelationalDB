@@ -1,0 +1,124 @@
+
+
+<html>
+<head>
+       <title>Small village Npc program</title>
+</head>
+
+<body bgcolor="white">
+
+<h3>Connecting to village database using MySQL/PHP</h3>
+
+
+
+<hr>
+
+<p>
+These are the items npc_town has to offer, find a seller here!
+If you don't see the item you are working for, check back in a
+weeks time, the wandering merchants get new random items every week!
+<p>
+
+<!-- <form action="findCustState.php" method="POST">
+
+<input type="text" name="state"> <br>
+<input type="submit" value="submit">
+<input type="reset" value="erase">
+</form> -->
+
+find location: 
+<form action="operations.php" method="POST">
+       <label for="item1">Select an item:</label>
+       <select name="item1" id="item1">
+         <option value="Sword">Sword - $50</option>
+         <option value="Shield">Shield - $30</option>
+         <option value="Bow">Bow - $40</option>
+         <option value="Arrow">Arrow - $1</option>
+         <option value="Helmet">Helmet - $25</option>
+         <option value="Gauntlets">Gauntlets - $20</option>
+         <option value="Boots">Boots - $15</option>
+         <option value="Chainmail">Chainmail - $35</option>
+         <option value="Potion">Potion - $10</option>
+         <option value="Spellbook">Spellbook - $60</option>
+         <option value="Dagger">Dagger - $20</option>
+         <option value="Axe">Axe - $45</option>
+         <option value="Mace">Mace - $35</option>
+         <option value="Staff">Staff - $30</option>
+         <option value="Cloak">Cloak - $15</option>
+         <option value="Gloves">Gloves - $10</option>
+         <option value="Robe">Robe - $40</option>
+         <option value="Ring">Ring - $25</option>
+         <option value="Amulet">Amulet - $20</option>
+         <option value="Belt">Belt - $15</option>
+       </select>
+       <input type="submit" value="submit">
+     <br>
+     </form>
+<hr>
+
+Press the button to find out what new items the wandering_merchants have! But watch out, they move around!
+<form action="operations.php" method="POST">
+       <label for="item2">new items:</label>
+       <button name="item2" value="NULL">results</button>
+    </form>
+<hr>
+
+Find differen't classes of people
+<form action="operations.php" method="POST">
+       <label for="item3">find townsfolk/shop_keeprs/nobels:</label>
+       <select name="item3" id="item3">
+         <option value="townsfolk">townsfolk</option>
+         <option value="shop_keepers">shop_keepers</option>
+         <option value="nobels">nobels</option>
+         <option value="wandering_merchant">wandering_merchants</option>
+       </select>
+       <input type="submit" value="submit">
+     <br>
+     </form>
+<hr>
+
+Looking to settle down? We have a couple homes on the market, but before we get too far are you somebody of... distinction?
+<form action="operations.php" method="POST">
+       <label for="item4">number of homes on the market:</label>
+       <select name="item4" id="item4">
+         <option value="nobels">nobel</option>
+         <option value="townsfolk">commoner</option>
+       </select>
+       <input type="submit" value="submit">
+     <br>
+     </form>
+<hr>
+Want to add more townsfolk? Watch out, they may take a home you were looking at!
+<form action="operations.php" method="POST">
+  <label for="fname">First Name:</label>
+  <input type="text" name="item5[fname]" id="fname"><br>
+  <label for="lname">Last Name:</label>
+  <input type="text" name="item5[lname]" id="lname"><br>
+  <input type="submit" value="submit">
+  <input type="reset" value="erase">
+</form>
+
+Vampire attack! kill the last added townsfolk
+<form action="operations.php" method="POST">
+       <label for="item6">ATTACK!</label>
+       <button name="item6" value="NULL">victim</button>
+    </form>
+<hr>
+
+
+<p>
+<a href="findCust.txt" >Contents</a>
+of this page.
+
+<p>
+<a href="operations.txt" >Contents</a>
+of the PHP page that gets called.
+(And the <a href="connectionData.txt" >connection data</a>,
+kept separately for security reasons.)
+
+
+
+
+</body>
+</html>
+

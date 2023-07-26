@@ -1,0 +1,98 @@
+<?php
+// Start the session
+session_start();
+
+// Check if user is not logged in
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+  // Redirect to the login page
+  header('Location: signIn.php');
+  exit;
+}
+
+if (isset($_POST['signOut'])) {
+  // Redirect to the sign-out page
+  header('Location: signOut.php');
+  exit;
+}
+?>
+
+<!-- Protected page content here -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Profile Page</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+  <body>
+  <h1>Welcome, <?php echo $_SESSION['userName']; ?></h1>
+
+  <div>
+    <a href="profile.php" class="return-link">Click here to return to profile</a>
+  </div>
+
+  <div>
+    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+          <input type="submit" name="signOut" value="Sign Out" class= sign-out-button>
+    </form>
+  </div>
+
+</body>
+</html>
+
+
+<!-- ^ styling submission boxes -->
+
+
+<!-- Code to submit art to database -->
+<?php
+include('connectionData.txt');
+$conn = mysqli_connect($server, $user, $pass, $dbname, $port) or die('Error connecting to MySQL server.');
+// $clientID = $_SESSION['clientID'];
+
+// $sql = "SELECT * FROM Messages WHERE receiverID = '$clientID'";
+//     $messages = mysqli_query($conn, $sql) or die(mysqli_error($conn));
+//     if (!$messages) {
+//       trigger_error('Could not access Messages', E_USER_ERROR);
+//     }
+    
+  //   foreach ($messages as $message) {
+  //     $messageID = $message['messageID'];
+  //     $sender = $message['senderID'];
+  //     $status = $message['status'];
+  //     $sentAt = $message['sentAt'];
+
+  //     $buttonColorDecline = 'red';
+  //     $buttonColorAccept = 'green';
+
+
+      
+  //     if ($status === 'Pending') {
+  //       // Delete button (red)
+  //       echo '<form action="deleteMessage.php" method="POST">';
+  //       echo '<input type="hidden" name="messageID" value="' . $messageID . '">';
+  //       echo '<button style="background-color: ' . $buttonColorDecline . '" type="submit" name="delete">Delete</button>';
+  //       echo '</form>';
+    
+  //       // Validate button (green)
+  //       echo '<form action="validation_page.php" method="POST">';
+  //       echo '<input type="hidden" name="messageID" value="' . $messageID . '">';
+  //       echo '<button style="background-color: ' . $buttonColorAccept . '" type="submit" name="validate">Validate</button>';
+  //       echo '</form>';
+  //     } else {
+  //       echo '<p>Status: ' . $status . '</p>';
+  //     }
+  //     echo '</div>';
+  // }
+    mysqli_free_result($result);
+    mysqli_close($conn);
+?>
+<!-- ^ code to sumbit art to database -->
+
+
+
+
+
+
+
+
+
